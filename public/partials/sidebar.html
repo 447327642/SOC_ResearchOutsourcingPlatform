@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="css/app.css">
+<div class="sidebar content-box" style="display: block;">
+        <ul class="nav">
+            <!-- Main menu -->
+            <li class="list"><a href="#/dashboard"><i class="glyphicon glyphicon-home"></i> {{role}} Information</a>
+                <ul>
+                    <a href="#/editService"><i class="glyphicon glyphicon-pencil"></i> Edit </a>
+                </ul>
+            </li>
+            <!--<li class="list" ng-show="role == 'serviceProvider' || userName == 'admin'">-->
+            <li class="list">
+                <a href="#/showProject"><i class="glyphicon glyphicon-stats"></i> Project </a>
+            </li>
+            <li class="list" ng-show="role == 'serviceUser'">
+                <a href="#/publishProject"><i class="glyphicon glyphicon-pencil"></i> Publish </a>
+            </li>
+            <li class="list"><a href="#/allProviders"><i class="glyphicon glyphicon-tasks"></i> All Providers/Users </a></li>
+            <li class="list"><a href="#/interaction"><i class="glyphicon glyphicon-list"></i>Interaction</a></li>
+            <li><a href="#/login"><i class="glyphicon glyphicon-record"></i> Logout </a></li>
+        </ul>
+</div>

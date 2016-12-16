@@ -1,0 +1,74 @@
+<div class="page-content">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-2" ng-include="'partials/sidebar.html'"></div>
+            <div class="col-md-10" ng-show="role == 'serviceUser'">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">Information</div>
+                            </div>
+                            <div class="panel-body">
+                                <input class="form-control" type="text" placeholder="keywords" ng-model = "userinfo.keywords"><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "editButton">
+                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" ng-click = "updateUserInfo()">Save</button>
+                </div>
+            </div>>
+            <div class="col-md-10" ng-show="role == 'serviceProvider'">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">Information</div>
+                            </div>
+                            <div class="panel-body">
+                                <input class="form-control" type="text" placeholder="Credential" ng-model = "providerinfo.credential"><br>
+                                <input class="form-control" type="text" placeholder="Research Area" ng-model = "providerinfo.researchAreas"><br>
+                                <input class="form-control" type="text" placeholder="Keyword" ng-model = "providerinfo.keyword"><br>
+                                <input class="form-control" type="text" placeholder="University" ng-model = "providerinfo.university">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-info">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Publication</div>
+                        <div class="panel-body">
+                            <input class="form-control" type="text" placeholder="Input your Publication" ng-model = "providerinfo.publications">
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Professional Services</div>
+                        <div class="panel-body">
+
+                            <div class="btn-group" role="group" aria-label="...">
+                                <input class="form-control" type="text" placeholder="Input your professional Services" ng-model = "providerinfo.professionalServices">
+                                <!--<button type="button" class="btn btn-default">consultant</button>-->
+                                <!--<button type="button" class="btn btn-default">design</button>-->
+                                <!--<button type="button" class="btn btn-default">development</button>-->
+                                <!--<button type="button" class="btn btn-default">proof-reading</button>-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "editButton">
+                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" ng-click = "updateProviderInfo()">Save</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include="'partials/footer.html'"></div>

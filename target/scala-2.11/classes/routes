@@ -1,0 +1,47 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+# Home page
+GET  /download/:filename                     controllers.Application.download(filename:String)
+GET        /serviceusers                     controllers.Application.getServiceUsers()
+GET   /users/:username/providerinfo          controllers.Application.getProviderInfo(username: String)
+GET   /users/:username/serviceuserinfo       controllers.Application.getServiceUserByName(username: String)
+GET   /projects/publisher/:username          controllers.Application.getProjectByPublisher(username: String)
+GET   /projects/provider/:username           controllers.Application.getProjectByProvider(username: String)
+GET   /users/showProjects        			 controllers.Application.getProjects()
+GET   /users/getAllProviders                 controllers.Application.getAllProviders()
+GET   /ratings/project/:projectname          controllers.Application.getRatingsByProject(projectname: String)
+GET        /                                 controllers.Application.index()
+GET   /bug                                   controllers.Application.getBugs()
+GET   /contract/:project                     controllers.Application.getContractByProject(project: String)
+GET   /json/:keyword                         controllers.SearchController.searchTitlesByKeyword(keyword: String)
+
+# Map the JS resource paths
+GET        /*file                            controllers.Assets.versioned(path="/public", file: Asset)
+
+
+POST  /users/login                           controllers.Application.loginSubmit()
+POST  /users/register                        controllers.Application.registerUser()
+
+GET   /users/:username/providerinfo          controllers.Application.getProviderInfo(username: String)
+
+POST  /users/:username/providerinfo          controllers.Application.updateProviderInfo(username: String)
+
+GET   /users/:username/userinfo	             controllers.Application.getUserInfo(username: String)
+POST  /users/:username/publishProject        controllers.Application.publishProject(username: String)
+GET   /users/showProjects        			 controllers.Application.getProjects()
+POST   /allReceivedFiles					 controllers.Application.getReceivedFiles()
+POST  /users/:username/serviceuserinfo       controllers.Application.updateServiceUser(username: String)
+POST  /bug/report                            controllers.Application.reportBug()
+GET   /projects/:status                      controllers.Application.getProjectByStatus(status: String)
+POST  /projects/projectname/:status          controllers.Application.updateProjectStatus(status: String)
+POST  /projects/provide/:username            controllers.Application.updateProjectProvider(username: String)
+POST  /projects/delete                       controllers.Application.deleteProject()
+POST  /ratings/update                        controllers.Application.updateRating()
+POST  /search/university                     controllers.Application.searchByUniversity()
+POST  /search/keywords                       controllers.Application.searchByKeywords()
+POST  /files/:sender/:receiver               controllers.Application.upload(sender:String,receiver:String)
+POST  /contract                              controllers.Application.saveContract()
+

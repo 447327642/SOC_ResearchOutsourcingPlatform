@@ -1,0 +1,71 @@
+<div class="page-content">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-2" ng-include="'partials/sidebar.html'"></div>
+
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">Basic Info</div>
+                            </div>
+                            <div class="panel-body">
+                                <p class="sec-title">Project name:</p>
+                                <input class="form-control" type="text" placeholder="Project Name" ng-model = "projectInfo.projectName"><br>
+                                <p class="sec-title">Brief descriptions:</p>
+                                <input class="form-control" type="text" placeholder="Brief descriptions" ng-model = "projectInfo.projectDescription">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-info">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Required expertise</div>
+                        <div class="panel-body">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <div ng-repeat="ex in expertise" style="float:left">
+                                    <button type="button" class="btn btn-default" value = "consultant" ng-click="updateExpertise(ex.name)">{{ex.name}}</button>
+                                    <!--<button type="button" class="btn btn-default" value = "design">design</button>-->
+                                    <!--<button type="button" class="btn btn-default" value = "development">development</button>-->
+                                    <!--<button type="button" class="btn btn-default" value = "proof-reading">proof-reading</button>-->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Time frame requirements</div>
+                        <div class="panel-body">
+                            <input class="form-control" type="text" placeholder="Input your begin Time" ng-model = "projectInfo.begintime">
+                            <br>
+                            <input class="form-control" type="text" placeholder="Input your end Time" ng-model = "projectInfo.endtime">
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Offered price</div>
+                        <div class="panel-body">
+                            <div class="col-md-4">
+                                <input class="form-control" id="price" type="text" placeholder="$" ng-model = "projectInfo.price">
+                                <div class="text-muted space-top-1">Price Define in USD</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "editButton">
+                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" ng-click = "publishProject()"> Publish </button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include="'partials/footer.html'"></div>

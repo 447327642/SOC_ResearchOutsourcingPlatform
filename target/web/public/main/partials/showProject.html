@@ -1,0 +1,87 @@
+<div class="page-content">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-2" ng-include="'partials/sidebar.html'"></div>
+
+            <div class="col-md-10">
+                <div class="row">
+
+                    <div class="col-md-2 img_project">
+                        <img src="http://golfes.info/wp-content/uploads/2016/01/14762-NPRV4K123.jpg" alt="..." class="img-thumbnail">
+                    </div>
+
+                    <div class="col-lg-8 sub-info searchBar">
+                        <div>
+                            <div class="input-group form">
+                                <input type="text" class="form-control" placeholder="Search Project" ng-model = "search.keywords">
+                                <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" ng-click = "searchProject()">Search</button>
+                                    </span>
+                            </div> <br>
+                            <input type="radio" name="rating" value="keywords" ng-model = "search.searchBy"> by Keywords
+                            <input type="radio" name="rating" value="topic" ng-model = "search.searchBy"> by Topic
+                            <input type="radio" name="rating" value="university" ng-model = "search.searchBy"> by University
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-info">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">In-market Projects</div>
+                        <div class="panel-body">
+                            <!-- Table -->
+                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                                <thead>
+                                    <tr>
+                                        <th><a ng-click="orderByField='status'; reverseSort = !reverseSort">Project Status <span ng-show="orderByField == 'status'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th><a ng-click="orderByField='projectName'; reverseSort = !reverseSort">Project Name <span ng-show="orderByField == 'projectName'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th>Publisher</th>
+                                        <th>Provider</th>
+                                        <th>projectDescription</th>
+                                        <th>requiredExpertise</th>
+                                        <th><a ng-click="orderByField='begintime'; reverseSort = !reverseSort">beginTime <span ng-show="orderByField == 'begintime'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th><a ng-click="orderByField='endtime'; reverseSort = !reverseSort">endTime <span ng-show="orderByField == 'endtime'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th><a ng-click="orderByField='price'; reverseSort = !reverseSort">price <span ng-show="orderByField == 'price'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th><a ng-click="orderByField='action'; reverseSort = !reverseSort">action <span ng-show="orderByField == 'action'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th ng-show="userName=='admin'">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="project in allProjects|orderBy:orderByField:reverseSort">
+                                        <td>{{project.status}}</td>
+                                        <td>{{project.projectName}}</td>
+                                        <td ng-show="project.publisherAnonymous=='false' || project.publisher==userName">{{project.publisher}}</td>
+                                        <td ng-show="project.publisherAnonymous=='true' && project.publisher !=userName">*****</td>
+                                        <td ng-show="project.providerAnonymous=='false' || project.provider==userName">{{project.provider}}</td>
+                                        <td ng-show="project.providerAnonymous=='true' && project.provider !=userName">*****</td>
+                                        <td>{{project.projectDescription}}</td>
+                                        <td>{{project.requiredExpertise}}</td>
+                                        <td>{{project.begintime}}</td>
+                                        <td>{{project.endtime}}</td>
+                                        <td>{{project.price}}</td>
+                                        <td><button type="button" class="btn btn-link btn-sm" ng-click="provideProject(project)" ng-disabled="project.status != 'In Market'">Provide</button> </td>
+                                        <td ng-show="userName=='admin'"><button type="button" class="btn btn-link btn-sm" ng-click="deleteProject(project.projectName)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include="'partials/footer.html'"></div>

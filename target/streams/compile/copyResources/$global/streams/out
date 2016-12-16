@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/Fernando/Desktop/18655-Fall2016-Team4/conf/application.conf,/Users/Fernando/Desktop/18655-Fall2016-Team4/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Fernando/Desktop/18655-Fall2016-Team4/conf/evolutions,/Users/Fernando/Desktop/18655-Fall2016-Team4/target/scala-2.11/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Fernando/Desktop/18655-Fall2016-Team4/conf/routes,/Users/Fernando/Desktop/18655-Fall2016-Team4/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Fernando/Desktop/18655-Fall2016-Team4/conf/evolutions/default,/Users/Fernando/Desktop/18655-Fall2016-Team4/target/scala-2.11/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Fernando/Desktop/18655-Fall2016-Team4/conf/evolutions/default/1.sql,/Users/Fernando/Desktop/18655-Fall2016-Team4/target/scala-2.11/classes/evolutions/default/1.sql)[0m

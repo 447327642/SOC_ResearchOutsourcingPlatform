@@ -1,0 +1,57 @@
+<div class="page-content">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-2" ng-include="'partials/sidebar.html'"></div>
+
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">User Information</div>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">{{checkedUser.userName}}</li>
+                                    <li class="list-group-item"><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">{{providerinfo.email}}</a></li>
+                                    <li class="list-group-item">{{providerinfo.keyword}}</li>
+                                    <!--<input type = "file" file-model = "myFile"/>-->
+                                    <!--<button ng-click = "uploadFile()">upload</button>-->
+                                    <form action="{{'http://localhost:9000/files/'+userName+'/'+checkedUser.userName}}" method="post" enctype="multipart/form-data">
+                                        <p><input type="file" name="file">
+                                        <p><button type="submit">Submit</button>
+                                    </form>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- this is the Chatting tool-->
+                        <div class="panel panel-info" id="chattingtool">
+                            <div class="panel-heading"> Send Message to {{checkedUser.userName}}: </div>
+                            <div class="panel-body">
+                                <!--<ul id="messages">{{chats.message}}</ul>-->
+
+                                <ul>
+                                    <li ng-repeat='chat in chats'> <b>{{chat.sender}}</b>: {{chat.message}}</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <!-- this is the message sending box-->
+                        <div class="well well-lg">
+                            <form action="">
+                                <input id="inputChat" autocomplete="off" ng-model = "chatInfo.chatMessage"/><button class="btn btn-success" ng-click = "sendChat()">Send</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include="'partials/footer.html'"></div>

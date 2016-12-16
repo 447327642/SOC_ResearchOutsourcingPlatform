@@ -1,0 +1,17 @@
+[0m[[31merror[0m] [0m/Users/Fernando/Desktop/18655-Fall2016-Team4/app/controllers/SearchController.java:46: no suitable method found for ok(com.google.gson.JsonArray)[0m
+[0m[[31merror[0m] [0m    method play.mvc.Results.ok(play.twirl.api.Content) is not applicable[0m
+[0m[[31merror[0m] [0m      (argument mismatch; com.google.gson.JsonArray cannot be converted to play.twirl.api.Content)[0m
+[0m[[31merror[0m] [0m    method play.mvc.Results.ok(java.lang.String) is not applicable[0m
+[0m[[31merror[0m] [0m      (argument mismatch; com.google.gson.JsonArray cannot be converted to java.lang.String)[0m
+[0m[[31merror[0m] [0m    method play.mvc.Results.ok(com.fasterxml.jackson.databind.JsonNode) is not applicable[0m
+[0m[[31merror[0m] [0m      (argument mismatch; com.google.gson.JsonArray cannot be converted to com.fasterxml.jackson.databind.JsonNode)[0m
+[0m[[31merror[0m] [0m    method play.mvc.Results.ok(byte[]) is not applicable[0m
+[0m[[31merror[0m] [0m      (argument mismatch; com.google.gson.JsonArray cannot be converted to byte[])[0m
+[0m[[31merror[0m] [0m    method play.mvc.Results.ok(java.io.InputStream) is not applicable[0m
+[0m[[31merror[0m] [0m      (argument mismatch; com.google.gson.JsonArray cannot be converted to java.io.InputStream)[0m
+[0m[[31merror[0m] [0m    method play.mvc.Results.ok(java.io.File) is not applicable[0m
+[0m[[31merror[0m] [0m      (argument mismatch; com.google.gson.JsonArray cannot be converted to java.io.File)[0m
+[0m[[31merror[0m] [0m    method play.mvc.Results.ok(play.mvc.Results.Chunks<?>) is not applicable[0m
+[0m[[31merror[0m] [0m      (argument mismatch; com.google.gson.JsonArray cannot be converted to play.mvc.Results.Chunks<?>)[0m
+[0m[[31merror[0m] [0mok[0m
+[0m[[0minfo[0m] [0mSome messages have been simplified; recompile with -Xdiags:verbose to get full output[0m

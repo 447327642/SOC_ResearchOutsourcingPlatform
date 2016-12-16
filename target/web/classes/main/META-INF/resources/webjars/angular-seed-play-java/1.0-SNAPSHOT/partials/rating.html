@@ -1,0 +1,46 @@
+<div class="page-content">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-2" ng-include="'partials/sidebar.html'"></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">Rating a Provider</div>
+                            </div>
+                            <div class="panel-body">
+                                Rating <br>
+                                <input type="radio" name="providerrate" ng-model="rating.providerrate" value="1"> 1
+                                <input type="radio" name="providerrate" ng-model="rating.providerrate" value="2"> 2
+                                <input type="radio" name="providerrate" ng-model="rating.providerrate" value="3"> 3
+                                <input type="radio" name="providerrate" ng-model="rating.providerrate" value="4"> 4
+                                <input type="radio" name="providerrate" ng-model="rating.providerrate" value="5"> 5
+                                <div class="text-muted space-top-1">5 being very satisfied; 1 being completely not satisfied</div> <br>
+
+                                Recommend <br>
+                                <input type="radio" name="projectrate" ng-model="rating.projectrate" value="1"> 1
+                                <input type="radio" name="projectrate" ng-model="rating.projectrate" value="2"> 2
+                                <input type="radio" name="projectrate" ng-model="rating.projectrate" value="3"> 3
+                                <input type="radio" name="projectrate" ng-model="rating.projectrate" value="4"> 4
+                                <input type="radio" name="projectrate" ng-model="rating.projectrate" value="5"> 5
+                                <div class="text-muted space-top-1">5: definitely; 1: definitely not</div> <br>
+
+                                Comments on project experience <br>
+                                <input class="form-control" type="text" placeholder="Comment" ng-model = "rating.comment"><br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "editButton">
+                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" ng-click = "submit()">Rate</button>
+                </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include="'partials/footer.html'"></div>

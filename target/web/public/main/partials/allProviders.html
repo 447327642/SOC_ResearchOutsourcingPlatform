@@ -1,0 +1,91 @@
+<div class="page-content">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-2" ng-include="'partials/sidebar.html'"></div>
+
+            <div class="col-md-10">
+
+                <div class="sub-info">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">All Providers</div>
+                        <div class="panel-body">
+                            <!-- Table -->
+                            <table class="table">
+                                <table cellpadding="0" cellspacing="0" border="0"
+                                       class="table table-striped table-bordered"
+                                       id="example">
+                                    <thead>
+                                    <tr>
+                                        <th>Provider Name</th>
+                                        <th><a ng-click="orderByField='status'; reverseSort = !reverseSort">Popularity
+                                            <span ng-show="orderByField == 'status'"><span
+                                                    ng-show="!reverseSort">^</span><span
+                                                    ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th><a ng-click="orderByField='projectName'; reverseSort = !reverseSort">Ranking
+                                            <span ng-show="orderByField == 'projectName'"><span
+                                                    ng-show="!reverseSort">^</span><span
+                                                    ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th><a ng-click="orderByField='begintime'; reverseSort = !reverseSort">Expertise
+                                            <span ng-show="orderByField == 'begintime'"><span
+                                                    ng-show="!reverseSort">^</span><span
+                                                    ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                        <th>
+                                            <a ng-click="orderByField='endtime'; reverseSort = !reverseSort">Keyword <span
+                                                    ng-show="orderByField == 'endtime'"><span
+                                                    ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                            </a></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="provider in allProviders|orderBy:orderByField:reverseSort">
+                                        <td ng-show="provider[5]=='false' || provider[0]==userName"><a ng-click="checkUser(provider[0])">{{provider[0]}}</a></td>
+                                        <td ng-show="provider[5]=='true' && provider[0] !=userName">*****</td>
+                                        <td>{{provider[1]}}</td>
+                                        <td>{{provider[2]}}</td>
+                                        <td>{{provider[3]}}</td>
+                                        <td>{{provider[4]}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sub-info">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">All Users</div>
+                        <div class="panel-body">
+                            <!-- Table -->
+                            <table class="table">
+                                <table cellpadding="0" cellspacing="0" border="0"
+                                       class="table table-striped table-bordered"
+                                       id="example2">
+                                    <thead>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th><a ng-click="orderByField='Keywords'; reverseSort = !reverseSort">Keywords
+                                            <span ng-show="orderByField == 'Keywords'"><span
+                                                    ng-show="!reverseSort">^</span><span
+                                                    ng-show="reverseSort">v</span></span>
+                                        </a></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="user in allUsers|orderBy:orderByField:reverseSort">
+                                        <td ng-show="user.anonymous=='false' || user.username==userName"><a ng-click="checkUser(user.username)">{{user.username}}</a></td>
+                                        <td ng-show="user.anonymous=='true' && user.username !=userName">*****</td>
+                                        <td>{{user.keywords}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-include="'partials/footer.html'"></div>
